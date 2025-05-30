@@ -266,6 +266,7 @@ function scaleGameWrapper() {
 window.addEventListener('resize', scaleGameWrapper);
 window.addEventListener('load', scaleGameWrapper);
 </script>
+<!--
 <style>
 #orientation-lock {
   position: fixed;
@@ -282,6 +283,7 @@ window.addEventListener('load', scaleGameWrapper);
   padding: 20px;
 }
 </style>
+-->
 
 <!--
 <div id="orientation-lock">Поверни устройство вертикально<br>для продолжения игры</div>
@@ -369,7 +371,7 @@ window.addEventListener('load', checkOrientation);
       document.querySelectorAll(".highlight").forEach(d => d.classList.remove("highlight"));
     }
 
-    function handleClick(e) {
+function handleClick(e) {
   const x = +e.target.dataset.x;
   const y = +e.target.dataset.y;
   const group = getGroup(x, y);
@@ -380,17 +382,20 @@ window.addEventListener('load', checkOrientation);
     board[p.y][p.x] = null;
   });
 
+  // 🔊 Звук и 📳 вибрация
+  playBreakSound();
+  vibrate();
 
   score += group.length * (group.length - 1);
   document.getElementById('score').textContent = score;
 
   collapse(() => {
-  if (!hasMoves()) {
-  setTimeout(() => {
-    showGameOver(score);
-  }, 200);
-}
-});
+    if (!hasMoves()) {
+      setTimeout(() => {
+        showGameOver(score);
+      }, 200);
+    }
+  });
 }
 
 
@@ -660,5 +665,6 @@ applyTranslations(initialLang);
     });
   });
 </script>
+<audio id="break-sound" src="sounds/click1.wav" preload="auto"></audio>
 </body>
 </html>
