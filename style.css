@@ -336,7 +336,7 @@
 */
     
     #gameover-popup{
-    width: var(--popup-width);
+    width: 52%;
     align-items: center;
     display: none;
     position: fixed;
@@ -369,17 +369,17 @@
     overflow-wrap: break-word;
     display: none;
     position: fixed;
+    width: 64%;
+    height: 56%;
     top: 50%;
+    border: 1px solid #555;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #222;
     color: #eee;
-    border: none;
     border-radius: 10px;
     padding: 40px;
-    z-index: 2000;
-    height: 360px;
-    width: 300px;   
+    z-index: 2000;   
 }
   
 
