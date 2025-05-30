@@ -42,7 +42,7 @@
 
 #game-wrapper {
   width: 410px;   /* макетная ширина */
-  height: 760px;  /* макетная высота */
+  height: 730px;  /* макетная высота */
   background: #1c1c1c;
   border-radius: 12px;
   box-sizing: border-box;
@@ -56,8 +56,8 @@
 
     #score-wrapper {
       font-size: 28px;
-      font-family: Days One;
-      font-weight: 400;
+      font-family: Orbitron;
+      font-weight: 700;
       color: #F1F2EE;
       margin-bottom: 13px;
       padding-top: 15px;
@@ -135,8 +135,8 @@
 }
 
 #menu-buttons {
-    margin-bottom: 10px;
-    display: flex;
+    margin-bottom: 20px;
+/*    display: flex;*/
 /*    justify-content: space-between;  кнопки слева, переключатель справа */
     align-items: center;      
     width: 100%;
