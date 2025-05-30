@@ -25,7 +25,7 @@
       display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 20px;
+  margin-top: 15px;
     }
     h1 {
       margin: 5px 0;
@@ -55,11 +55,12 @@
 }
 
     #score-wrapper {
-      font-size: 28px;
+      font-size: 30px;
       font-family: Orbitron;
       font-weight: 700;
-      color: #F1F2EE;
+      color: #f2f2f1;
       margin-bottom: 15px;
+      border: 2px solid #555;
       padding-top: 15px;
       padding-bottom: 15px;
       background: #363537;
@@ -67,7 +68,7 @@
       z-index: 10000;
       width: fit-content;
       width: fit-content;
-      width: 100%; /* если контейнер у нас ограничивает ширину */
+      width: 99%; /* если контейнер у нас ограничивает ширину */
 /*        max-width: [ширина #board];*/
       display: flex;
       flex-direction: column;
