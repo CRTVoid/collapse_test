@@ -85,6 +85,6 @@ function playBreakSound() {
 
 function vibrate() {
   if (navigator.vibrate) {
-    navigator.vibrate(100);
+    navigator.vibrate(200);
   }
 }
