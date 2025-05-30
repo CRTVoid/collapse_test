@@ -384,7 +384,7 @@ function handleClick(e) {
 
   // 🔊 Звук и 📳 вибрация
   playBreakSound();
-  vibrate();
+  navigator.vibrate(100);
 
   score += group.length * (group.length - 1);
   document.getElementById('score').textContent = score;
