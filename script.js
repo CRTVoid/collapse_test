@@ -55,7 +55,7 @@ function resizeBoard() {
   const screenWidth = window.innerWidth;
 
   // Максимальная ширина board — 320px
-  const boardWidth = Math.min(screenWidth * 0.9, 320);
+  const boardWidth = Math.min(screenWidth * 0.9, 410);
   const cellSize = boardWidth / 10; // 10 столбцов
 
   board.style.width = boardWidth + "px";
@@ -72,5 +72,19 @@ function resizeBoard() {
   const scoreWrapper = document.querySelector(".score-wrapper");
   if (scoreWrapper) {
     scoreWrapper.style.width = boardWidth + "px";
+  }
+}
+
+function playBreakSound() {
+  const sound = document.getElementById('break-sound');
+  if (sound) {
+    sound.currentTime = 0;
+    sound.play().catch(() => {}); // игнор ошибок
+  }
+}
+
+function vibrate() {
+  if (navigator.vibrate) {
+    navigator.vibrate(80);
   }
 }
