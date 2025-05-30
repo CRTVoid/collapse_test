@@ -55,7 +55,7 @@ function resizeBoard() {
   const screenWidth = window.innerWidth;
 
   // Максимальная ширина board — 320px
-  const boardWidth = Math.min(screenWidth * 0.9, 410);
+  const boardWidth = Math.min(screenWidth * 0.9, 320);
   const cellSize = boardWidth / 10; // 10 столбцов
 
   board.style.width = boardWidth + "px";
@@ -75,6 +75,12 @@ function resizeBoard() {
   }
 }
 
+const soundPool = Array.from({ length: 4 }, () => {
+  const audio = new Audio("sounds/click1.wav");
+  audio.preload = "auto";
+  return audio;
+});
+
 function playBreakSound() {
   const sound = document.getElementById('break-sound');
   if (sound) {
@@ -85,6 +91,6 @@ function playBreakSound() {
 
 function vibrate() {
   if (navigator.vibrate) {
-    navigator.vibrate(200);
+    navigator.vibrate(80);
   }
 }
