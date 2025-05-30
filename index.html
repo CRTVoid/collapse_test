@@ -14,6 +14,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="favicon.png">
 
 <title>Коллапс</title>
@@ -99,12 +102,12 @@
   }
   
   body.dark-mode #newGame {
-    background-image: url('icons/ng.svg');
+    background-image: url('icons/ng_wt.svg');
       
   }
     
   body.dark-mode #help-button {
-    background-image: url('icons/help.svg');
+    background-image: url('icons/help_wt.svg');
   }
     
   body.dark-mode #lang-selector {
@@ -140,8 +143,8 @@
 
 #newGame {
   margin-right: 10px;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   background: none;
   border:none;
   background-image: url('icons/ng.svg');
@@ -151,8 +154,8 @@
 }
         
 #help-button {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   background: none;
   border:none;
   background-image: url('icons/help.svg');
@@ -306,7 +309,7 @@ window.addEventListener('load', checkOrientation);
 <script>
         
     const colors = ["#F45D01", "#97CC04", "#2D7DD2", "#EEB902", "#68B0AB"]
-    const rows = 14, cols = 9, cellSize = 42;
+    const rows = 13, cols = 9, cellSize = 42;
     const board = [];
     let score = 0;
 
@@ -384,7 +387,7 @@ function handleClick(e) {
 
   // 🔊 Звук и 📳 вибрация
   playBreakSound();
-  vibrate();
+  navigator.vibrate(100);
 
   score += group.length * (group.length - 1);
   document.getElementById('score').textContent = score;
@@ -665,6 +668,6 @@ applyTranslations(initialLang);
     });
   });
 </script>
-<audio id="break-sound" src="sounds/click1.mp3" preload="auto"></audio>
+<audio id="break-sound" src="sounds/click1.wav" preload="auto"></audio>
 </body>
 </html>
