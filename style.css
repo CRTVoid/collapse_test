@@ -51,6 +51,7 @@
   align-items: center;
   justify-content: start;
   overflow: hidden;
+  contain: layout paint; /* изолирует layout от изменений внутри */
 }
 
     #score-wrapper {
@@ -58,7 +59,7 @@
       font-family: Days One;
       font-weight: 400;
       color: #F1F2EE;
-      margin-bottom: 10px;
+      margin-bottom: 13px;
       padding-top: 15px;
       padding-bottom: 15px;
       background: #363537;
@@ -84,11 +85,14 @@
     .cell {
       width: 40px;
       height: 40px;
+      top: 0px;
+      left: 0px;
       border-radius: 10%;
       position: absolute;
       transition: top 0.2s ease-in, left 0.2s ease-in;
       background-blend-mode: overlay;
       background-color: currentColor;
+      will-change: transform;
     }
     .highlight {
       background: #1c1c1c;
@@ -98,11 +102,24 @@
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  animation: pulse 5s infinite cubic-bezier(0.19, 1, 0.22,1);
-  transition: all 3s ease;
+/*  animation: pulse 5s infinite cubic-bezier(0.19, 1, 0.22,1);*/
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22,1);
   animation-fill-mode: forwards;
-  animation-iteration-count: 1;
+/*  animation-iteration-count: 1;*/
+  transform: scale(0.85);
+  outline-offset: -1px;
 
+}
+
+.cell:before {
+  content: "";
+  position: absolute;
+  top: 0px; bottom: 0px; left: 0px; right: 0px;
+  border: 1px solid #F1F2EE;
+  border-radius: 5px;
+  pointer-events: none;
+  padding: 1px;
+  z-index: 1;
 }
 
 .cell::after {
@@ -113,14 +130,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   pointer-events: none; /* чтобы не мешал кликам */
-}
-
-
-@keyframes pulse {
-    10% { transform: scale(0.85); opacity: 1; }
-    30% { transform: scale(0.85); opacity: 1; }
-    50% { transform: scale(0.85); opacity: 1; }
-    100% { transform: scale(0.85); opacity: 1; }
 }
 
 #menu-buttons {
@@ -316,10 +325,12 @@
 */
 
 @media (max-width: 600px) {
+/*
    * {
     animation: none !important;
     transition: none !important;
     }
+*/
     
     #gameover-popup{
     width: var(--popup-width);
