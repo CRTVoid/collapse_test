@@ -167,6 +167,7 @@
 #help-popup {
   display: none;
   position: fixed;
+  border: 1px solid #555;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -385,9 +386,9 @@ function handleClick(e) {
     board[p.y][p.x] = null;
   });
 
-  // // 🔊 Звук и 📳 вибрация
-  // playBreakSound();
-  // navigator.vibrate(100);
+  // 🔊 Звук и 📳 вибрация
+  playBreakSound();
+  navigator.vibrate(100);
 
   score += group.length * (group.length - 1);
   document.getElementById('score').textContent = score;
@@ -668,6 +669,6 @@ applyTranslations(initialLang);
     });
   });
 </script>
-<!-- <audio id="break-sound" src="sounds/click1.wav" preload="auto"></audio> -->
+<audio id="break-sound" src="sounds/click1.wav" preload="auto"></audio>
 </body>
 </html>
