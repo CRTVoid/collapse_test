@@ -75,22 +75,22 @@ function resizeBoard() {
   }
 }
 
-const soundPool = Array.from({ length: 4 }, () => {
-  const audio = new Audio("sounds/click1.wav");
-  audio.preload = "auto";
-  return audio;
-});
+// const soundPool = Array.from({ length: 4 }, () => {
+//   const audio = new Audio("sounds/click1.wav");
+//   audio.preload = "auto";
+//   return audio;
+// });
 
-function playBreakSound() {
-  const sound = document.getElementById('break-sound');
-  if (sound) {
-    sound.currentTime = 0;
-    sound.play().catch(() => {}); // игнор ошибок
-  }
-}
+// function playBreakSound() {
+//   const sound = document.getElementById('break-sound');
+//   if (sound) {
+//     sound.currentTime = 0;
+//     sound.play().catch(() => {}); // игнор ошибок
+//   }
+// }
 
-function vibrate() {
-  if (navigator.vibrate) {
-    navigator.vibrate(80);
-  }
-}
+// function vibrate() {
+//   if (navigator.vibrate) {
+//     navigator.vibrate(80);
+//   }
+// }
