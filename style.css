@@ -111,7 +111,8 @@
 
 }
 
-/* .cell:before {
+/*
+.cell:before {
   content: "";
   position: absolute;
   top: 0px; bottom: 0px; left: 0px; right: 0px;
@@ -120,7 +121,8 @@
   pointer-events: none;
   padding: 1px;
   z-index: 1;
-} */
+}
+*/
 
 .cell::after {
   content: "";
@@ -133,7 +135,7 @@
 }
 
 #menu-buttons {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex;
 /*    justify-content: space-between;  кнопки слева, переключатель справа */
     align-items: center;      
