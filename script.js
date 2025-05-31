@@ -95,20 +95,17 @@ function resizeBoard() {
 //   }
 // }
 
-function fixViewportHeight() {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
-function scaleGameWrapper() {
-  const game = document.getElementById('game-wrapper');
+function scaleGame() {
+  const gw = document.getElementById('game-wrapper');
   const scaleX = window.innerWidth / 410;
   const scaleY = window.innerHeight / 730;
   const scale = Math.min(scaleX, scaleY);
 
-  game.style.transform = `translate(-50%, -50%) scale(${scale})`;
+  gw.style.transform = `translate(-50%, -50%) scale(${scale})`;
 }
 
-window.addEventListener('resize', scaleGameWrapper);
-window.addEventListener('orientationchange', scaleGameWrapper);
-window.addEventListener('load', scaleGameWrapper);
+window.addEventListener('load', scaleGame);
+window.addEventListener('resize', scaleGame);
+window.addEventListener('orientationchange', () => {
+  setTimeout(scaleGame, 300); // даём Safari пересчитать размеры
+});
