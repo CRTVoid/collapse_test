@@ -21,6 +21,14 @@
   align-items: center;     /* по вертикали */
   height: 100vh;           /* высота равна высоте окна */
 }
+
+#scale_container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
     #container {
       display: flex;
   flex-direction: column;
@@ -41,8 +49,8 @@
 
 
 #game-wrapper {
-  width: 410px;
-  height: 730px;
+  width: 410px;   /* макетная ширина */
+  height: 730px;  /* макетная высота */
   background: #1c1c1c;
   border-radius: 12px;
   box-sizing: border-box;
@@ -51,18 +59,14 @@
   align-items: center;
   justify-content: start;
   overflow: hidden;
-  contain: layout paint;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  contain: layout paint; /* изолирует layout от изменений внутри */
 }
 
     #score-wrapper {
       font-size: 30px;
       font-family: Orbitron;
       font-weight: 700;
-      color: #f2f2f1;
+      color: #F2F3EE;
       margin-bottom: 15px;
       border: 2px solid #555;
       padding-top: 15px;
@@ -332,6 +336,64 @@
 */
 
 @media (max-width: 600px) {
+/*
+   * {
+    animation: none !important;
+    transition: none !important;
+    }
+*/
+    
+    #gameover-popup{
+    width: 52%;
+    align-items: center;
+    display: none;
+    position: fixed;
+    padding-right: 20px;
+    padding-left: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #222;
+    color: #eee;
+    border: none;
+    border-radius: 20px;
+    padding: 40px;
+    z-index: 2000;
+    }
+    
+    #gameover-popup .help-content h2 {
+    --popup-width: 220px;
+    white-space: nowrap;
+  width: var(--popup-width);
+  margin-top: 0;
+    vertical-align: center;
+  font-family: Days One;
+  font-weight: 400;
+  color: #fff;
+  font-size: 25px;
+}
+ 
+#help-popup {
+    overflow-wrap: break-word;
+    display: none;
+    position: fixed;
+    width: 64%;
+    height: 56%;
+    top: 50%;
+    border: 1px solid #555;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #222;
+    color: #eee;
+    border-radius: 10px;
+    padding: 40px;
+    z-index: 2000;   
+}
+  
+
+}  
+
+@media (max-width: 599px) {
 /*
    * {
     animation: none !important;
