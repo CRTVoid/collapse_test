@@ -43,7 +43,7 @@
 
 #game-wrapper {
   width: 410px;   /* макетная ширина */
-  height: var(--vh, 730px); /* запасное значение */
+  height: 730px; /* макетная высота */
   background: #1c1c1c;
   border-radius: 12px;
   box-sizing: border-box;
