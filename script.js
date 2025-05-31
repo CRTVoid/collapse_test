@@ -95,18 +95,4 @@ function resizeBoard() {
 //  }
 //}
 
-function fixGameWrapperHeight() {
-  const gameWrapper = document.getElementById('game-wrapper');
-  gameWrapper.style.height = window.innerHeight + 'px';
-}
-
-window.addEventListener('load', fixGameWrapperHeight);
-window.addEventListener('resize', () => {
-  // Иногда срабатывает слишком рано, делаем паузу
-  setTimeout(fixGameWrapperHeight, 100);
-});
-window.addEventListener('orientationchange', () => {
-  setTimeout(fixGameWrapperHeight, 300);
-});
-
 
