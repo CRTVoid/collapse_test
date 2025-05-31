@@ -95,4 +95,13 @@ function resizeBoard() {
 //  }
 //}
 
+function setVhVariable() {
+  const vh = window.innerHeight;
+  document.documentElement.style.setProperty('--vh', vh + 'px');
+}
 
+window.addEventListener('load', setVhVariable);
+window.addEventListener('resize', setVhVariable);
+window.addEventListener('orientationchange', () => {
+  setTimeout(setVhVariable, 300); // ждём обновления layout
+});
