@@ -75,37 +75,24 @@ function resizeBoard() {
   }
 }
 
-// const soundPool = Array.from({ length: 4 }, () => {
-//   const audio = new Audio("sounds/click1.wav");
-//   audio.preload = "auto";
-//   return audio;
-// });
+//const soundPool = Array.from({ length: 4 }, () => {
+//  const audio = new Audio("sounds/click1.wav");
+//  audio.preload = "auto";
+//  return audio;
+//});
+//
+//function playBreakSound() {
+//  const sound = document.getElementById('break-sound');
+//  if (sound) {
+//    sound.currentTime = 0;
+//    sound.play().catch(() => {}); // игнор ошибок
+//  }
+//}
+//
+//function vibrate() {
+//  if (navigator.vibrate) {
+//    navigator.vibrate(80);
+//  }
+//}
 
-// function playBreakSound() {
-//   const sound = document.getElementById('break-sound');
-//   if (sound) {
-//     sound.currentTime = 0;
-//     sound.play().catch(() => {}); // игнор ошибок
-//   }
-// }
 
-// function vibrate() {
-//   if (navigator.vibrate) {
-//     navigator.vibrate(80);
-//   }
-// }
-
-function scaleGame() {
-  const gw = document.getElementById('game-wrapper');
-  const scaleX = window.innerWidth / 410;
-  const scaleY = window.innerHeight / 730;
-  const scale = Math.min(scaleX, scaleY);
-
-  gw.style.transform = `translate(-50%, -50%) scale(${scale})`;
-}
-
-window.addEventListener('load', scaleGame);
-window.addEventListener('resize', scaleGame);
-window.addEventListener('orientationchange', () => {
-  setTimeout(scaleGame, 300); // даём Safari пересчитать размеры
-});
