@@ -42,8 +42,7 @@
 
 
 #game-wrapper {
-  width: 410px;   /* макетная ширина */
-  height: 730px; /* макетная высота */
+  width: 410px;
   background: #1c1c1c;
   border-radius: 12px;
   box-sizing: border-box;
@@ -52,7 +51,7 @@
   align-items: center;
   justify-content: start;
   overflow: hidden;
-  contain: layout paint; /* изолирует layout от изменений внутри */
+  contain: layout paint;
 }
 
     #score-wrapper {
