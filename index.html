@@ -3,7 +3,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
 <!-- SDK от Яндекс -->
@@ -165,6 +165,7 @@
 }
 
 #help-popup {
+  border: 1px solid #555;
   display: none;
   position: fixed;
   border: 1px solid #555;
@@ -234,6 +235,7 @@
 Закончить игру
 </button>
 -->
+<!-- Кнопка окончания игры тест -->
 <div id="scale_container">
 <div id="game-scaler">
 <div id="game-wrapper">
@@ -251,11 +253,6 @@
   <div id="score-wrapper"><span id="score">0</span></div>
   <div id="board"></div>
 </div>
-</div>
-</div>
-</div>
-  <div id="score-wrapper"><span id="score">0</span></div>
-  <div id="board"></div>
 </div>
 </div>
 </div>
@@ -392,9 +389,9 @@ function handleClick(e) {
     board[p.y][p.x] = null;
   });
 
-  // // 🔊 Звук и 📳 вибрация
-  // playBreakSound();
-  // navigator.vibrate(100);
+//  // 🔊 Звук и 📳 вибрация
+//  playBreakSound();
+//  navigator.vibrate(100);
 
   score += group.length * (group.length - 1);
   document.getElementById('score').textContent = score;
@@ -556,10 +553,10 @@ function closeHelp() {
 const translations = {
   ru: {
     title: "Как играть",
-    line1: "Нажмите на группу кубиков одного цвета, чтобы удалить их с поля.",
+    line1: "Нажмите на группу шариков одного цвета, чтобы удалить их с поля.",
     line2: "Чем больше группа, тем больше очков:",
     points: [
-      "2 кубика — 2 очка",
+      "2 шарика — 2 очка",
       "3 — 6 очков",
       "4 — 12 очков",
       "5 — 20 очков",
@@ -575,10 +572,10 @@ const translations = {
   },
   en: {
     title: "How to Play",
-    line1: "Click on a group of blocks of the same color to remove them from the board.",
+    line1: "Click on a group of balls of the same color to remove them from the board.",
     line2: "The larger the group, the more points you earn:",
     points: [
-      "2 blocks — 2 points",
+      "2 balls — 2 points",
       "3 — 6 points",
       "4 — 12 points",
       "5 — 20 points",
@@ -675,6 +672,6 @@ applyTranslations(initialLang);
     });
   });
 </script>
-<!-- <audio id="break-sound" src="sounds/click1.wav" preload="auto"></audio> -->
+<!--<audio id="break-sound" src="sounds/click1.wav" preload="auto"></audio>-->
 </body>
 </html>
