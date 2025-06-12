@@ -2,9 +2,9 @@
   "name": "Collapse",
   "short_name": "Collapse_test",
   "start_url": "index.html",
-  "display": "standalone",
+  "display": "fullscreen",
   "orientation": "portrait",
-  "background_color": "#000000",
+  "background_color": "#111",
   "theme_color": "#000000",
   "icons": [
     {
