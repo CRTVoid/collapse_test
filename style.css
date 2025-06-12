@@ -16,7 +16,7 @@
       touch-action: none;
 }
    body {
-  padding-top: env( safe-area-inset-top);
+/*   padding-top: env( safe-area-inset-top); */
   display: flex;
   justify-content: center; /* по горизонтали */
   align-items: center;     /* по вертикали */
