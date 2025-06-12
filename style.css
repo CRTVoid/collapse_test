@@ -440,11 +440,3 @@ button.disabled {
   height: 45px;
   margin-right: 10px;
 }
-
-@media (max-width: 768px) {
-  @supports (padding-top: env(safe-area-inset-top)){
-    .container {
-      margin-top: 18px;
-    }
-  }
-}
